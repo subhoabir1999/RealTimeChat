@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RealTimeChat</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgb(181, 255, 245);
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            /* background: url("bg2.png") no-repeat center center/cover; */
+            height: 95vh;
+        }
+
+        .navbar {
+            background-color: rgb(56, 34, 34);
+            font-weight: bolder;
+        }
+
+        ul {
+            display: flex;
+        }
+
+        li {
+            list-style: none;
+            margin: 1rem;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        h2 {
+            color: darkslategray;
+            margin-top: 2rem;
+            text-align: center;
+            text-decoration: underline;
+        }
+
+        h3 {
+            color: rgb(105, 66, 22);
+            text-align: center;
+            margin: 1rem;
+        }
+
+        #container {
+            /* border: 2px solid red; */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 15rem;
+        }
+
+        #inp {
+            height: 1.7rem;
+            width: 60%;
+            margin: 0.5rem;
+            border-radius: 5rem;
+        }
+
+        #btn {
+            background-color: rgb(190, 189, 165);
+            border-radius: 1rem;
+            font-weight: bolder;
+            width: 3.5rem;
+            height: 1.8rem;
+        }
+
+        footer {
+            font-size: smaller;
+            position: absolute;
+            bottom: 0.4rem;
+            left: 5.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <h2>Welcome To My Real-Time Chat Web Application</h2>
+
+    <form name="login">
+        <!-- Username<input type="text" name="userid"/> -->
+        <div id="container">
+            <h3>Enter Password to Go Inside</h3>
+            <input id="inp" type="password" name="pswrd" />
+            <input id="btn" type="button" onclick="check(this.form)" value="Log in" />
+            <!-- <input type="reset" value="Cancel"/> -->
+        </div>
+    </form>
+
+    <footer>
+        Copyright &copy; Subhamoy Bhandari ......
+    </footer>
+
+    <script language="javascript">
+        let text = document.getElementsByTagName('h5');
+        function check(form) {
+            if (form.pswrd.value == "smad") {
+                window.open('main/main.html')
+                form.pswrd.value = "";
+            }
+            else if(form.pswrd.value == ""){
+                text.innerHTML = "enter";
+            }
+            else {
+                alert("Password Invalid")
+            }
+        }
+    </script>
+</body>
+
+</html>
